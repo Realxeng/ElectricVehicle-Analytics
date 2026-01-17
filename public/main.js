@@ -13,7 +13,6 @@ const loadingScreen = document.getElementById("loadingScreen");
 async function loadData() {
     try {
         loadingScreen.style.display = "flex";
-        console.log(loadingText.textContent);
         const res = await fetch("/data");
         data = await res.json();
         console.log(`Loaded ${data.length} records`);
