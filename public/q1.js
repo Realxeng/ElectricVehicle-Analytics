@@ -1,0 +1,27 @@
+/**
+a.  Display the total number of vehicles produced by each manufacturing company.
+    For example,
+    o	Input: Mini ; output : 72
+    o	Input: Mini Electric ; output: 19
+ */
+
+export function q1(dataset, search = "") {
+    let count = 0;
+    for (const car of dataset) {
+        if (car.Model.toLowerCase().includes(search.toLowerCase())) {
+            count++;
+        }
+    }
+    return count;
+}
+
+//Module Test
+/*
+import { loadData } from "../loadTestData.js";
+
+const data = await loadData();
+
+const count = q1(data, "Mini");
+
+console.log(count);
+*/
