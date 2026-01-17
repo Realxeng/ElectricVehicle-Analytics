@@ -8,7 +8,7 @@ a.  Display the total number of vehicles produced by each manufacturing company.
 export function q1(dataset, search = "") {
     let count = 0;
     for (const car of dataset) {
-        if (car.Model.toLowerCase().includes(search.toLowerCase())) {
+        if (car.Manufacturer.toLowerCase().includes(search.toLowerCase())) {
             count++;
         }
     }
