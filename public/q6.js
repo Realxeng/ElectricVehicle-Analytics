@@ -16,9 +16,9 @@ export function q6(data) {
 
 //Module Test
 /*
-import { loadData } from "../loadTestData.js";
+import { loadTestData } from "../loadData.js";
 
-const data = await loadData();
+const data = await loadTestData();
 
 const answer = q6(data);
 

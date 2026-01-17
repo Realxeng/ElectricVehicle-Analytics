@@ -17,9 +17,9 @@ export function q1(dataset, search = "") {
 
 //Module Test
 /*
-import { loadData } from "../loadTestData.js";
+import { loadTestData } from "../loadData.js";
 
-const data = await loadData();
+const data = await loadTestData();
 
 const count = q1(data, "Mini");
 

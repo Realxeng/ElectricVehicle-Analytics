@@ -26,9 +26,9 @@ export function q2(data, search) {
 
 //Module Test
 /*
-import { loadData } from "../loadTestData.js";
+import { loadTestData } from "../loadData.js";
 
-const data = await loadData();
+const data = await loadTestData();
 
 const answer = q2(data, "Tesla");
 

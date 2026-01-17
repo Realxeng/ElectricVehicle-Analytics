@@ -68,6 +68,7 @@ export function q5(data) {
     return answer;
 }
 
+/*
 // export function q5a(data) {
 //     let top5 = [];
 //     for (const car of data) {
@@ -85,11 +86,13 @@ export function q5(data) {
 //     console.log(JSON.stringify(top5, null, 2));
 //     return answer;
 // }
+*/
+
 
 //Module Test
-import { loadData } from "../loadTestData.js";
+import { loadTestData } from "../loadData.js";
 
-const data = await loadData();
+const data = await loadTestData();
 
 const answer = q5(data);
 
