@@ -10,6 +10,9 @@ Phase 1 require to use imperative programming approach to perform the following 
 6. Identify the best-selling electronic vehicles in 2024
 ## How to Run
 1. Ensure you have installed node
-2. In the root folder, run `npm i` to install all dependencies
-3. Start the server by running `npm run start`
-4. Server is started on port 3000. Access the page by going to http://localhost:3000
+2. Download the electric_vehicles_dataset.json and put into the root folder
+3. In the root folder, run `npm i` to install all dependencies  
+   Your folder should look like this now  
+   <img width="341" height="632" alt="image" src="https://github.com/user-attachments/assets/812c3319-2814-4188-bc86-bc52b107f907" />
+5. Start the server by running `npm run start`
+6. Server is started on port 3000. Access the page by going to http://localhost:3000
