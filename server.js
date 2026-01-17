@@ -1,3 +1,7 @@
+/**
+ // 🚫SERVER DO NOT TOUCH🚫 //
+ */
+
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";

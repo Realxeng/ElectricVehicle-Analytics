@@ -1,3 +1,4 @@
+//Import functions for all questions
 import { q1 } from "./q1.js";
 import { q2 } from "./q2.js";
 import { q3 } from "./q3.js";
@@ -5,8 +6,10 @@ import { q4 } from "./q4.js";
 import { q5 } from "./q5.js";
 import { q6 } from "./q6.js";
 
+//Get the loading screen element
 const loadingScreen = document.getElementById("loadingScreen");
 
+//Function to load and process the dataset
 async function loadData() {
     try {
         loadingScreen.style.display = "flex";
@@ -37,6 +40,7 @@ async function loadData() {
     }
 }
 
+//Function to fill the manufacturers drop-down menu
 function populateManufacturers(input) {
     const select = document.getElementById(input);
 
@@ -49,6 +53,7 @@ function populateManufacturers(input) {
     }
 }
 
+//Function to fill the charging types drop-down menu
 function populateChargingTypes(input) {
     const select = document.getElementById(input);
 
@@ -61,39 +66,48 @@ function populateChargingTypes(input) {
     }
 }
 
+//Question 1 event handler
 function question1() {
     const input = document.getElementById("q1input").value;
     document.getElementById("q1Output").textContent = q1(data, input);
 }
 
+//Question 2 event handler
 function question2() {
     const input = document.getElementById("q2input").value;
     document.getElementById("q2Output").textContent = q2(data, input);
 }
 
+//Question 3 event handler
 function question3() {
     const input = document.getElementById("q3input").value;
     document.getElementById("q3Output").textContent = q3(data, input);
 }
 
+//Question 4 event handler
 function question4() {
     const input = document.getElementById("q4input").value;
     document.getElementById("q4Output").textContent = q4(data, input);
 }
 
+//Question 5 event handler
 function question5() {
     document.getElementById("q5Output").textContent = q5(data);
 }
 
+//Question 6 event handler
 function question6() {
     document.getElementById("q6Output").textContent = q6(data);
 }
 
+//Initialize all cache
 let data = [];
 let manufacturers = [];
 let chargingTypes = [];
+//Load and cache the data
 await loadData();
 
+//Initialize event listener
 document.getElementById("question1").addEventListener("click", question1);
 document.getElementById("question2").addEventListener("click", question2);
 document.getElementById("question3").addEventListener("click", question3);
