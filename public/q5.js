@@ -88,7 +88,7 @@ export function q5(data) {
 // }
 */
 
-
+/*
 //Module Test
 import { loadTestData } from "../loadData.js";
 
@@ -97,3 +97,4 @@ const data = await loadTestData();
 const answer = q5(data);
 
 console.log(JSON.stringify(answer, null, 2));
+*/
