@@ -27,7 +27,7 @@ async function loadData() {
         populateManufacturers("q1input");
         populateManufacturers("q2input");
         populateManufacturers("q3input");
-        populateCharging("q4input");
+        populateChargingTypes("q4input");
         console.log(`Loaded ${manufacturers.length} Manufacturers`);
         console.log(`Loaded ${chargingTypes.length} Charge Types`);
     } catch (err) {
@@ -49,7 +49,7 @@ function populateManufacturers(input) {
     }
 }
 
-function populateCharging(input) {
+function populateChargingTypes(input) {
     const select = document.getElementById(input);
 
     for (const type of chargingTypes) {
