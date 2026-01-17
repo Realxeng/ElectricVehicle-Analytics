@@ -5,19 +5,20 @@ import { q4 } from "./q4.js";
 import { q5 } from "./q5.js";
 import { q6 } from "./q6.js";
 
-let data = [];
+const loadingScreen = document.getElementById("loadingScreen");
 
 async function loadData() {
     try {
+        loadingScreen.style.display = "flex";
         const res = await fetch("/data");
         data = await res.json();
         console.log(`Loaded ${data.length} records`);
     } catch (err) {
         console.error("Failed to fetch dataset:", err);
+    } finally {
+        loadingScreen.style.display = "none";
     }
 }
-
-loadData();
 
 function question1() {
     const input = document.getElementById("q1input").value;
@@ -46,6 +47,9 @@ function question5() {
 function question6() {
     document.getElementById("q6Output").textContent = q6(data);
 }
+
+let data = [];
+loadData();
 
 document.getElementById("question1").addEventListener("click", question1);
 document.getElementById("question2").addEventListener("click", question2);
