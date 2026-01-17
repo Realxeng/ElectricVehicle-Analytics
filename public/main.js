@@ -10,13 +10,54 @@ const loadingScreen = document.getElementById("loadingScreen");
 async function loadData() {
     try {
         loadingScreen.style.display = "flex";
+        console.log(loadingText.textContent);
         const res = await fetch("/data");
         data = await res.json();
         console.log(`Loaded ${data.length} records`);
+        for (const model of data) {
+            const brandExists = manufacturers.includes(model.Manufacturer);
+            const chargeExists = chargingTypes.includes(model.Charging_Type);
+            if (brandExists && chargeExists) {
+                continue;
+            } else {
+                if (!brandExists) manufacturers.push(model.Manufacturer);
+                if (!chargeExists) chargingTypes.push(model.Charging_Type);
+            }
+        }
+        populateManufacturers("q1input");
+        populateManufacturers("q2input");
+        populateManufacturers("q3input");
+        populateCharging("q4input");
+        console.log(`Loaded ${manufacturers.length} Manufacturers`);
+        console.log(`Loaded ${chargingTypes.length} Charge Types`);
     } catch (err) {
         console.error("Failed to fetch dataset:", err);
     } finally {
         loadingScreen.style.display = "none";
+    }
+}
+
+function populateManufacturers(input) {
+    const select = document.getElementById(input);
+
+    for (const brand of manufacturers) {
+        const option = document.createElement("option");
+        option.value = brand;
+        option.textContent = brand;
+
+        select.appendChild(option);
+    }
+}
+
+function populateCharging(input) {
+    const select = document.getElementById(input);
+
+    for (const type of chargingTypes) {
+        const option = document.createElement("option");
+        option.value = type;
+        option.textContent = type;
+
+        select.appendChild(option);
     }
 }
 
@@ -41,7 +82,7 @@ function question4() {
 }
 
 function question5() {
-    document.getElementById("q5Output").textContent = q5(data, 2025);
+    document.getElementById("q5Output").textContent = q5(data);
 }
 
 function question6() {
@@ -49,7 +90,9 @@ function question6() {
 }
 
 let data = [];
-loadData();
+let manufacturers = [];
+let chargingTypes = [];
+await loadData();
 
 document.getElementById("question1").addEventListener("click", question1);
 document.getElementById("question2").addEventListener("click", question2);
