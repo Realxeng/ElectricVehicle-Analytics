@@ -67,7 +67,7 @@ function populateChargingTypes(input) {
     }
 }
 
-//Question 1 event handler
+//Question 1 button event handler
 function question1() {
     const input = document.getElementById("q1input").value;
     if (!input)
@@ -76,7 +76,7 @@ function question1() {
     else document.getElementById("q1Output").textContent = q1(data, input);
 }
 
-//Question 2 event handler
+//Question 2 button event handler
 function question2() {
     const input = document.getElementById("q2input").value;
     if (!input)
@@ -85,7 +85,7 @@ function question2() {
     else document.getElementById("q2Output").textContent = q2(data, input);
 }
 
-//Question 3 event handler
+//Question 3 button event handler
 function question3() {
     const input = document.getElementById("q3input").value;
     if (!input)
@@ -94,7 +94,7 @@ function question3() {
     else document.getElementById("q3Output").textContent = q3(data, input);
 }
 
-//Question 4 event handler
+//Question 4 button event handler
 function question4() {
     const input = document.getElementById("q4input").value;
     if (!input)
@@ -103,12 +103,12 @@ function question4() {
     else document.getElementById("q4Output").textContent = q4(data, input);
 }
 
-//Question 5 event handler
+//Question 5 button event handler
 function question5() {
     document.getElementById("q5Output").textContent = q5(data);
 }
 
-//Question 6 event handler
+//Question 6 button event handler
 function question6() {
     document.getElementById("q6Output").textContent = q6(data);
 }
