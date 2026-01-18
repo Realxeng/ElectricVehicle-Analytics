@@ -8,7 +8,7 @@ e.	Rank 2025 vehicles by safety rating (top 5 safest)
     iv.	Jeep	:   Wrangler 4xe (PHEV)
     v.	BMW	    :   iX1
  */
-export function q5b(data) {
+export function q5(data) {
     //Initialize the top5 list
     let top5 = [];
     //Iterate through the dataset
@@ -143,7 +143,7 @@ import { loadTestData } from "../loadData.js";
 
 const data = await loadTestData();
 
-const answer = q5b(data);
+const answer = q5(data);
 
 console.log(JSON.stringify(answer, null, 2));
 */
