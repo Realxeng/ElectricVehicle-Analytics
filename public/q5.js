@@ -8,30 +8,38 @@ e.	Rank 2025 vehicles by safety rating (top 5 safest)
     iv.	Jeep	:   Wrangler 4xe (PHEV)
     v.	BMW	    :   iX1
  */
-
-export function q5(data) {
+export function q5b(data) {
+    //Initialize the top5 list
     let top5 = [];
+    //Iterate through the dataset
     for (const car of data) {
+        //Skip models not from 2025 and upcoming models
         if (car.Year !== 2025 || car.Model.includes("upcoming")) continue;
-        if (top5.length < 5) top5.push(car);
+        //Initialize the 5 elements
+        if (top5.length < 5) {
+            top5.push(car);
+            continue;
+        }
+        //Check the top5 list
         for (const [index, element] of top5.entries()) {
-            if (
-                car.Safety_Rating > element.Safety_Rating ||
-                car.Warranty_Years > element.Warranty_Years
-            ) {
-                top5.splice(index, 0, car);
+            //Replace the item from top5 list with a car with higher safety rating
+            if (car.Safety_Rating > element.Safety_Rating) {
+                //Insert the car and remove the current item in the index
+                top5.splice(index, 1, car);
                 break;
             }
         }
-        if (top5.length === 5) break;
     }
+    //Form the final answer
     let answer = "";
     for (const [index, car] of top5.entries()) {
         answer += `${index + 1}. ${car.Manufacturer}: ${car.Model}\n`;
     }
+    //Return the answer
     return answer;
 }
 
+//Average of all years
 /*
 export function q5a(data) {
     //Combine all the safety rating data for every model
@@ -103,12 +111,39 @@ export function q5a(data) {
 }
 */
 
-//Module Test
+//How to get the example answer :v
+/*
+export function q5b(data) {
+    let top5 = [];
+    for (const car of data) {
+        if (car.Year !== 2025 || car.Model.includes("upcoming")) continue;
+        if (top5.length < 5) top5.push(car);
+        for (const [index, element] of top5.entries()) {
+            if (
+                car.Safety_Rating > element.Safety_Rating ||
+                car.Warranty_Years > element.Warranty_Years
+            ) {
+                top5.splice(index, 0, car);
+                break;
+            }
+        }
+        if (top5.length === 5) break;
+    }
+    let answer = "";
+    for (const [index, car] of top5.entries()) {
+        answer += `${index + 1}. ${car.Manufacturer}: ${car.Model}\n`;
+    }
+    return answer;
+}
+*/
 
+//Module Test
+/*
 import { loadTestData } from "../loadData.js";
 
 const data = await loadTestData();
 
-const answer = q5(data);
+const answer = q5b(data);
 
 console.log(JSON.stringify(answer, null, 2));
+*/
