@@ -8,7 +8,31 @@ e.	Rank 2025 vehicles by safety rating (top 5 safest)
     iv.	Jeep	:   Wrangler 4xe (PHEV)
     v.	BMW	    :   iX1
  */
+
 export function q5(data) {
+    let top5 = [];
+    for (const car of data) {
+        if (
+            car.Year === 2025 &&
+            car.Safety_Rating === 5 &&
+            car.Warranty_Years === 5 &&
+            !car.Model.includes("upcoming")
+        ) {
+            top5.push(car);
+            if (top5.length === 5) break;
+            continue;
+        }
+    }
+    let answer = "";
+    for (const [index, car] of top5.entries()) {
+        answer += `${index + 1}. ${car.Manufacturer}: ${car.Model}\n`;
+    }
+    console.log(JSON.stringify(top5, null, 2));
+    return answer;
+}
+
+/*
+export function q5a(data) {
     //Combine all the safety rating data for every model
     let modelSafetyTotal = {};
     for (const car of data) {
@@ -73,25 +97,6 @@ export function q5(data) {
     }
     return answer;
 }
-
-/*
-// export function q5a(data) {
-//     let top5 = [];
-//     for (const car of data) {
-//         if (top5.length < 5) top5.push(car);
-//         if (car.Safety_Rating === 5.0) {
-//             top5.shift();
-//             top5.push(car);
-//             continue;
-//         }
-//     }
-//     let answer = "";
-//     for (const [index, car] of top5.entries()) {
-//         answer += `${index + 1}. ${car.Manufacturer}: ${car.Model}\n`;
-//     }
-//     console.log(JSON.stringify(top5, null, 2));
-//     return answer;
-// }
 */
 
 //Module Test
