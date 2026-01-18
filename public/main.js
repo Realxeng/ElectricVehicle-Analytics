@@ -89,9 +89,9 @@ function question2() {
 function question3() {
     const input = document.getElementById("q3input").value;
     if (!input)
-        document.getElementById("q2Output").textContent =
+        document.getElementById("q3Output").textContent =
             "Select a Manufacturer";
-    else document.getElementById("q2Output").textContent = q1(data, input);
+    else document.getElementById("q3Output").textContent = q1(data, input);
 }
 
 //Question 4 event handler
