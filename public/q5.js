@@ -12,22 +12,23 @@ e.	Rank 2025 vehicles by safety rating (top 5 safest)
 export function q5(data) {
     let top5 = [];
     for (const car of data) {
-        if (
-            car.Year === 2025 &&
-            car.Safety_Rating === 5 &&
-            car.Warranty_Years === 5 &&
-            !car.Model.includes("upcoming")
-        ) {
-            top5.push(car);
-            if (top5.length === 5) break;
-            continue;
+        if (car.Year !== 2025 || car.Model.includes("upcoming")) continue;
+        if (top5.length < 5) top5.push(car);
+        for (const [index, element] of top5.entries()) {
+            if (
+                car.Safety_Rating > element.Safety_Rating ||
+                car.Warranty_Years > element.Warranty_Years
+            ) {
+                top5.splice(index, 0, car);
+                break;
+            }
         }
+        if (top5.length === 5) break;
     }
     let answer = "";
     for (const [index, car] of top5.entries()) {
         answer += `${index + 1}. ${car.Manufacturer}: ${car.Model}\n`;
     }
-    console.log(JSON.stringify(top5, null, 2));
     return answer;
 }
 
@@ -36,17 +37,20 @@ export function q5a(data) {
     //Combine all the safety rating data for every model
     let modelSafetyTotal = {};
     for (const car of data) {
-        //Initialize the modelSafety object
-        if (!modelSafetyTotal[car.Model]) {
-            modelSafetyTotal[car.Model] = {
-                brand: car.Manufacturer,
-                rating: 0,
-                count: 0,
-            };
+        if (car.Safety_Rating === null) continue;
+        if (car.Year === 2025) {
+            //Initialize the modelSafety object
+            if (!modelSafetyTotal[car.Model]) {
+                modelSafetyTotal[car.Model] = {
+                    brand: car.Manufacturer,
+                    rating: 0,
+                    count: 0,
+                };
+            }
+            //Add the safety rating
+            modelSafetyTotal[car.Model]["rating"] += car.Safety_Rating;
+            modelSafetyTotal[car.Model]["count"]++;
         }
-        //Add the safety rating
-        modelSafetyTotal[car.Model]["rating"] += car.Safety_Rating;
-        modelSafetyTotal[car.Model]["count"]++;
     }
 
     //Calculate the average safety rating for every model
@@ -100,7 +104,7 @@ export function q5a(data) {
 */
 
 //Module Test
-/*
+
 import { loadTestData } from "../loadData.js";
 
 const data = await loadTestData();
@@ -108,4 +112,3 @@ const data = await loadTestData();
 const answer = q5(data);
 
 console.log(JSON.stringify(answer, null, 2));
-*/
