@@ -10,60 +10,61 @@ e.	Rank 2025 vehicles by safety rating (top 5 safest)
  */
 export function q5(data) {
     //Combine all the safety rating data for every model
-    let modelSafety = {};
+    let modelSafetyTotal = {};
     for (const car of data) {
         //Initialize the modelSafety object
-        if (!modelSafety[car.Model]) {
-            modelSafety[car.Model] = {
+        if (!modelSafetyTotal[car.Model]) {
+            modelSafetyTotal[car.Model] = {
                 brand: car.Manufacturer,
                 rating: 0,
                 count: 0,
             };
         }
         //Add the safety rating
-        modelSafety[car.Model]["rating"] += car.Safety_Rating;
-        modelSafety[car.Model]["count"]++;
+        modelSafetyTotal[car.Model]["rating"] += car.Safety_Rating;
+        modelSafetyTotal[car.Model]["count"]++;
     }
 
     //Calculate the average safety rating for every model
-    let modelAverageSafety = [];
-    for (const model in modelSafety) {
-        modelAverageSafety.push({
-            brand: modelSafety[model].brand,
+    let modelSafetyAverage = [];
+    for (const model in modelSafetyTotal) {
+        modelSafetyAverage.push({
+            brand: modelSafetyTotal[model].brand,
             model: model,
-            averageSafety: modelSafety[model].rating / modelSafety[model].count,
-            dataPoint: modelSafety[model].count,
+            averageSafety:
+                modelSafetyTotal[model].rating / modelSafetyTotal[model].count,
+            dataPoint: modelSafetyTotal[model].count,
         });
     }
 
     //Insertion Sort the average rating
-    let sortedAverageSafety = [];
-    for (const model of modelAverageSafety) {
+    let sortedSafetyAverage = [];
+    for (const model of modelSafetyAverage) {
         //Initialize the sorted array
-        if (sortedAverageSafety.length === 0) {
-            sortedAverageSafety.push(model);
+        if (sortedSafetyAverage.length === 0) {
+            sortedSafetyAverage.push(model);
             continue;
         }
-        for (const [index, sortedModel] of sortedAverageSafety.entries()) {
+        for (const [index, sortedModel] of sortedSafetyAverage.entries()) {
             //Add record above other record
             if (model.averageSafety > sortedModel.averageSafety) {
-                sortedAverageSafety.splice(index, 0, model);
+                sortedSafetyAverage.splice(index, 0, model);
                 break;
             }
             //Interate until the record is above a lower safety record
             if (
                 model.averageSafety <= sortedModel.averageSafety &&
-                index < sortedAverageSafety.length - 1
+                index < sortedSafetyAverage.length - 1
             )
                 continue;
             //Insert at the bottom of the array
-            sortedAverageSafety.push(model);
+            sortedSafetyAverage.push(model);
             break;
         }
     }
 
     //Take only the top 5
-    const top5 = sortedAverageSafety.slice(0, 5);
+    const top5 = sortedSafetyAverage.slice(0, 5);
 
     //Form the answer string
     let answer = "";
