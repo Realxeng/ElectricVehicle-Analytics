@@ -1,13 +1,13 @@
 body {
     font-family: Inter, Arial, sans-serif;
-    background: #f4f6f8;
+    background: #1f242c;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #cfd3da;
 }
 header {
-    background: #111827;
-    color: white;
+    background: #262b33;
+    color: #e4e7eb;
     padding: 1.5rem;
     text-align: center;
 }
@@ -21,15 +21,16 @@ main {
     gap: 1.5rem;
 }
 section {
-    background: white;
+    background: #2a303a;
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-h2 {
+h2,
+h3 {
     margin-top: 0;
-    font-size: 1.25rem;
+    color: #e6e8ec;
 }
 input,
 select,
@@ -37,21 +38,23 @@ button {
     padding: 0.6rem 0.8rem;
     margin-top: 0.5rem;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #475569;
     font-size: 0.95rem;
+    background: #334155;
+    color: #e5e7eb;
 }
 button {
-    background: #2563eb;
-    color: white;
+    background: #3b82f6;
+    color: #f9fafb;
     cursor: pointer;
     border: none;
 }
 button:hover {
-    background: #1d4ed8;
+    background: #3f6bf1;
 }
 .output {
     margin-top: 1rem;
-    background: #f9fafb;
+    background: #313844;
     padding: 1rem;
     border-radius: 8px;
     white-space: pre-line;
