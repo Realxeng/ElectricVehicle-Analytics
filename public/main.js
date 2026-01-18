@@ -26,6 +26,8 @@ async function loadData() {
                 if (!chargeExists) chargingTypes.push(model.Charging_Type);
             }
         }
+        manufacturers.sort((a, b) => a.localeCompare(b));
+        chargingTypes.sort((a, b) => a.localeCompare(b));
         populateManufacturers("q1input");
         populateManufacturers("q2input");
         populateManufacturers("q3input");
@@ -68,25 +70,37 @@ function populateChargingTypes(input) {
 //Question 1 event handler
 function question1() {
     const input = document.getElementById("q1input").value;
-    document.getElementById("q1Output").textContent = q1(data, input);
+    if (!input)
+        document.getElementById("q1Output").textContent =
+            "Select a Manufacturer";
+    else document.getElementById("q1Output").textContent = q1(data, input);
 }
 
 //Question 2 event handler
 function question2() {
     const input = document.getElementById("q2input").value;
-    document.getElementById("q2Output").textContent = q2(data, input);
+    if (!input)
+        document.getElementById("q2Output").textContent =
+            "Select a Manufacturer";
+    else document.getElementById("q2Output").textContent = q1(data, input);
 }
 
 //Question 3 event handler
 function question3() {
     const input = document.getElementById("q3input").value;
-    document.getElementById("q3Output").textContent = q3(data, input);
+    if (!input)
+        document.getElementById("q2Output").textContent =
+            "Select a Manufacturer";
+    else document.getElementById("q2Output").textContent = q1(data, input);
 }
 
 //Question 4 event handler
 function question4() {
     const input = document.getElementById("q4input").value;
-    document.getElementById("q4Output").textContent = q4(data, input);
+    if (!input)
+        document.getElementById("q4Output").textContent =
+            "Select a Charging Type";
+    else document.getElementById("q4Output").textContent = q1(data, input);
 }
 
 //Question 5 event handler

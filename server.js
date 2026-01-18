@@ -1,5 +1,5 @@
 /**
- // 🚫SERVER DO NOT TOUCH🚫 //
+ // SERVER DO NOT TOUCH PWEASEEE //
  */
 
 import express from "express";
