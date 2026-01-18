@@ -82,7 +82,7 @@ function question2() {
     if (!input)
         document.getElementById("q2Output").textContent =
             "Select a Manufacturer";
-    else document.getElementById("q2Output").textContent = q1(data, input);
+    else document.getElementById("q2Output").textContent = q2(data, input);
 }
 
 //Question 3 event handler
@@ -91,7 +91,7 @@ function question3() {
     if (!input)
         document.getElementById("q3Output").textContent =
             "Select a Manufacturer";
-    else document.getElementById("q3Output").textContent = q1(data, input);
+    else document.getElementById("q3Output").textContent = q3(data, input);
 }
 
 //Question 4 event handler
@@ -100,7 +100,7 @@ function question4() {
     if (!input)
         document.getElementById("q4Output").textContent =
             "Select a Charging Type";
-    else document.getElementById("q4Output").textContent = q1(data, input);
+    else document.getElementById("q4Output").textContent = q4(data, input);
 }
 
 //Question 5 event handler
