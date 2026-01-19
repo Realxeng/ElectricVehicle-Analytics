@@ -25,4 +25,5 @@ Phase 1 require to use imperative programming approach to perform the following 
       ![Right click on index.html and start with live server](image-1.png)
     - Open index.html and click "Go Live"
       ![Open index.html and click "Go Live"](image-2.png)
-4. The page should automatically open in your default browser
+4. The page should automatically open in your default browser  
+   If the page fail to open automatically, you can access the page by going to [http://127.0.0.1:5500/](http://127.0.0.1:5500/)
