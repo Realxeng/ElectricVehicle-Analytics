@@ -16,11 +16,11 @@ Phase 1 require to use imperative programming approach to perform the following 
 ## How to Run
 
 1. Ensure you have installed [Node.js](https://nodejs.org/) and [Live Server VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-2. Download the electric_vehicles_dataset.json and put inside the data folder
+2. Download the electric_vehicles_dataset.json and put inside the public folder
    Your folder should look like this now  
-   ![Screenshot of the directory](image.png)
-3. Start the page by running index.html using Live Server
-   You can do either of these 2 steps to start the Live Server
+   ![Screenshot of the directory](image-3.png)
+3. Open the page by starting Live Server
+   You can start the live server by following **either** of these
     - Right click on index.html and start with live server
       ![Right click on index.html and start with live server](image-1.png)
     - Click "Go Live"
