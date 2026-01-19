@@ -13,8 +13,8 @@ export function q5(data) {
     let top5 = [];
     //Iterate through the dataset
     for (const car of data) {
-        //Skip models not from 2025 and upcoming models
-        if (car.Year !== 2025 || car.Model.includes("upcoming")) continue;
+        //Skip models not from 2025 and 2024 and upcoming models
+        if (car.Year < 2024 || car.Model.includes("upcoming")) continue;
         //Initialize the 5 elements
         if (top5.length < 5) {
             top5.push(car);
@@ -39,14 +39,15 @@ export function q5(data) {
     return answer;
 }
 
-//Average of all years
+//Average of years 2024-2025
 /*
-export function q5a(data) {
+export function q5(data) {
     //Combine all the safety rating data for every model
     let modelSafetyTotal = {};
     for (const car of data) {
-        if (car.Safety_Rating === null) continue;
-        if (car.Year === 2025) {
+        if (car.Safety_Rating === null || car.Model.includes("upcoming"))
+            continue;
+        if (car.Year === 2025 || car.Year === 2024) {
             //Initialize the modelSafety object
             if (!modelSafetyTotal[car.Model]) {
                 modelSafetyTotal[car.Model] = {
@@ -101,6 +102,8 @@ export function q5a(data) {
 
     //Take only the top 5
     const top5 = sortedSafetyAverage.slice(0, 5);
+
+    console.log(JSON.stringify(top5, null, 2));
 
     //Form the answer string
     let answer = "";
