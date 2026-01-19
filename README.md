@@ -15,7 +15,7 @@ Phase 1 require to use imperative programming approach to perform the following 
 
 ## How to Run
 
-1. Ensure you have installed [node](https://nodejs.org/) and [Live Server VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+1. Ensure you have installed [Node.js](https://nodejs.org/) and [Live Server VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 2. Download the electric_vehicles_dataset.json and put inside the data folder
    Your folder should look like this now  
    ![Screenshot of the directory](image.png)
