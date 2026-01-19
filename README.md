@@ -1,5 +1,6 @@
 # APLC Assignment Phase 1 (Imperative Programming)
 The assignment involves working with a JSON file containing 3022 records of electronic vehicles and plug-in models across many brands and years, capturing technical specifications, performance, pricing, manufacturing origin, sales, and safety-related attributes.  
+
 ## Questions
 Phase 1 require to use imperative programming approach to perform the following operations:  
 1. Display the total number of vehicles produced by each manufacturing company.
@@ -8,11 +9,11 @@ Phase 1 require to use imperative programming approach to perform the following 
 4. Determine average charging time by charging type
 5. Rank 2025 vehicles by safety rating (top 5 safest)
 6. Identify the best-selling electronic vehicles in 2024
+
 ## How to Run
-1. Ensure you have installed node
-2. Download the electric_vehicles_dataset.json and put into the root folder
-3. In the root folder, run `npm i` to install all dependencies  
+1. Ensure you have installed [node](https://nodejs.org/) and [Live Server VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Download the electric_vehicles_dataset.json and put inside the data folder
    Your folder should look like this now  
-   <img width="341" height="632" alt="image" src="https://github.com/user-attachments/assets/812c3319-2814-4188-bc86-bc52b107f907" />
-5. Start the server by running `npm run start`
-6. Server is started on port 3000. Access the page by going to http://localhost:3000
+
+5. Start the page by running index.html using Live Server
+6. The page should automatically open in your default browser

@@ -13,8 +13,8 @@ const loadingScreen = document.getElementById("loadingScreen");
 async function loadData() {
     try {
         loadingScreen.style.display = "flex";
-        const res = await fetch("/data");
-        data = await res.json();
+        const response = await fetch("../data/electric_vehicles_dataset.json");
+        data = await response.json();
         console.log(`Loaded ${data.length} records`);
         for (const model of data) {
             const brandExists = manufacturers.includes(model.Manufacturer);
