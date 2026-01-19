@@ -20,4 +20,9 @@ Phase 1 require to use imperative programming approach to perform the following 
    Your folder should look like this now  
    ![Screenshot of the directory](image.png)
 3. Start the page by running index.html using Live Server
+   You can do either of these 2 steps to start the Live Server
+    - Right click on index.html and start with live server
+      ![Right click on index.html and start with live server](image-1.png)
+    - Open index.html and click "Go Live"
+      ![Open index.html and click "Go Live"](image-2.png)
 4. The page should automatically open in your default browser
