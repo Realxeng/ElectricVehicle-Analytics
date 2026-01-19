@@ -13,7 +13,7 @@ const loadingScreen = document.getElementById("loadingScreen");
 async function loadData() {
     try {
         loadingScreen.style.display = "flex";
-        const response = await fetch("../data/electric_vehicles_dataset.json");
+        const response = await fetch("./electric_vehicles_dataset.json");
         data = await response.json();
         console.log(`Loaded ${data.length} records`);
         for (const model of data) {
